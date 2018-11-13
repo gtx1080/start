@@ -9,16 +9,17 @@ class stack():
     def push(self,a):
         self.stack1.append(a)
     def pop(self):
-        self.stack1.remove(self.stack1[0])
+        a=self.stack1[len(self.stack1)-1]
+        self.stack1.remove(self.stack1[len(self.stack1)-1])
+        return a
     def read(self):
         return self.stack1
 
-
-test=stack()
-test.push(1)
-test.push(2)
-test.pop()
-print(test.read())
-print(test.isempty())
-test.pop()
-print(test.isempty())
+astr='()()((((())))(()((()'
+b=stack()
+for i in astr:
+    if i=='(':
+        b.push('(')
+    else:
+        b.pop()
+print(len(b.read()))
