@@ -15,14 +15,18 @@ class stack():
     def read(self):
         return self.stack1
 
-astr='()()((((())))(()((()'
+astr='(())()()'
 b=stack()
+over=False
 for i in astr:
     if i=='(':
         b.push('(')
-    else:
+    elif(len(b.read())>0):
         b.pop()
-if len(b.read())!=0:
+    else:
+        over=True
+        break
+if len(b.read())!=0 or over:
     print(False)
 else:
     print(True)
