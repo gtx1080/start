@@ -23,3 +23,11 @@ for i in astr:
     else:
         b.pop()
 print(len(b.read()))
+a=stack()
+b=[1,2,3,4,5]
+c=[]
+for i in b:
+    a.push(i)
+for i in range(len(b)):
+    c.append(a.pop())
+print(c)
