@@ -22,7 +22,10 @@ for i in astr:
         b.push('(')
     else:
         b.pop()
-print(len(b.read()))
+if len(b.read())!=0:
+    print(False)
+else:
+    print(True)
 a=stack()
 b=[1,2,3,4,5]
 c=[]
