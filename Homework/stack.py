@@ -15,18 +15,28 @@ class stack():
     def read(self):
         return self.stack1
 
-astr='(())()()'
+astr='(())()()[][[]]{}{}{{{}}}(([[]]))'
 b=stack()
+c=stack()
+d=stack()
 over=False
 for i in astr:
-    if i=='(':
-        b.push('(')
-    elif(len(b.read())>0):
+    if i == '(':
+        b.push(i)
+    elif i == '[':
+        c.push(i)
+    elif i=='{':
+        d.push(i)
+    elif(len(b.read())>0) and i==')':
         b.pop()
+    elif(len(c.read())>0) and i==']':
+        c.pop()
+    elif(len(d.read())>0) and i=='}':
+        d.pop()
     else:
         over=True
         break
-if len(b.read())!=0 or over:
+if len(b.read())!=0 or len(c.read())!=0 or len(d.read())!=0 or over:
     print(False)
 else:
     print(True)
