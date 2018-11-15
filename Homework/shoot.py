@@ -14,9 +14,9 @@ class stack():
         return a
     def read(self):
         return self.stack1
-str1='22A'
+str1='22A'#初始值
 start=1
-jz=16
+jz=16#初始值是几进制
 res0=stack()
 a=0
 num=['0','1','2','3','4','5','6','7','8','9']
@@ -29,7 +29,7 @@ for i in range(len(str1)-1,-1,-1):
 res=stack()
 print(a)
 b=[]
-n=16
+n=16#转到几进制
 while a:
     res.push(a%n)
     a=a//n
@@ -39,4 +39,5 @@ while not res.isempty():
         b.append(r)
     else:
         b.append(chr(r+55))
-print(b)
+for i in b:
+    print(str(i),end='')
