@@ -17,6 +17,11 @@ class Stack:
 
     def size(self):
         return len(self.items)
+class Tree():
+    def __init__(self,cargo,left=None,right=None):
+        self.cargo=cargo
+        self.left=left
+        self.right=right
 import numpy as np
 #Q10(a)
 a=Stack()#stack to be searched from
@@ -49,3 +54,26 @@ for i in range(6):
             count=count+1
     rowc.append(count)
 print(values,rowc,col)
+#Q10
+tree=Tree()
+s=Stack()
+names=[]
+for i in names:
+    s.push(i)
+while(s.size()):
+    r=Tree(s.pop())
+    finish = False
+    cur=tree
+    while not finish:
+        if r.cargo >cur.cargo:
+            if cur.right == None:
+                cur.right=r
+                finish= True
+            else:
+                cur=cur.right
+        else:
+            if cur.left == None:
+                cur.left=r
+                finish= True
+            else:
+                cur=cur.left
