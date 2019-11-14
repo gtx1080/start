@@ -6,23 +6,15 @@ import math
 
 def CO2():
     fig = plt.figure()
-    '''创建3D轴对象'''
     ax = Axes3D(fig)
-    '''X坐标数据'''
     X = np.arange(-2, 2, 0.1)
-    '''Y坐标数据'''
     Y = np.arange(-2, 2, 0.1)
-    '''计算3维曲面分格线坐标'''
     X, Y = np.meshgrid(X, Y)
-    '''用于计算X/Y对应的Z值'''
 
     def f(x, y):
         return (1 - y ** 5 + x ** 5) * np.exp(-x ** 2 - y ** 2)
-
-    '''plot_surface函数可绘制对应的曲面'''
     #ax.plot_surface(X, Y, f(X, Y), rstride=1, cstride=1)
     ax.plot_wireframe(X,Y,f(X, Y))
-    '''显示'''
     plt.show()
 #Ball_3D(1)
 #Gauss(1)
